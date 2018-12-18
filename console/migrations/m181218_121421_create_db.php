@@ -9,7 +9,7 @@ class m181218_121421_create_db extends Migration
 {
     public function safeUp()
     {
-
+        $date = date_create();
         $this->addColumn('user', 'role_id', $this->integer());
         $this->addColumn('user', 'cmnd', $this->string(12)->unique());
         $this->addColumn('user', 'attributes', $this->getDb()->getSchema()->createColumnSchemaBuilder('LONGTEXT'));
@@ -167,14 +167,52 @@ class m181218_121421_create_db extends Migration
         $this->addForeignKey("fk_chitietgd_user","chitietgd","user_id","user","id"); 
 
         //fk user-role
-        $this->addForeignKey("fk_user_role","user","role_id","role","id");     
+        $this->addForeignKey("fk_user_role","user","role_id","role","id"); 
+
+        //create data
+        $this->insert('role', [
+            'role_name' => 'admin',
+            'created_at' => date_timestamp_get($date),
+            'updated_at' => date_timestamp_get($date),
+        ]);
+        $this->insert('role', [
+            'role_name' => 'customer',
+            'created_at' => date_timestamp_get($date),
+            'updated_at' => date_timestamp_get($date),
+        ]);
+
+        $this->insert('user', [          
+            'username' => 'admin',
+            'password_hash' => Yii::$app->security->generatePasswordHash("123123"),
+            'auth_key' => 'test100key',
+            'email' => 'admin@gmail.com',
+            'created_at' => date_timestamp_get($date),
+            'updated_at' => date_timestamp_get($date),
+            'role_id' => 1,
+        ]);
+        $this->insert('user', [          
+            'username' => 'datdat',
+            'password_hash' => Yii::$app->security->generatePasswordHash("123123"),
+            'auth_key' => 'test100key',
+            'email' => 'datdat@gmail.com',
+            'created_at' => date_timestamp_get($date),
+            'updated_at' => date_timestamp_get($date),
+            'role_id' => 2,
+        ]);
+
     }
 
     /**
      * {@inheritdoc}
      */
     public function safeDown()
-    {     
+    {    
+
+        $this->delete('user', ['id' => 2]);
+        $this->delete('user', ['id' => 1]);
+        $this->delete('role', ['id' => 2]);
+        $this->delete('role', ['id' => 1]);      
+
         $this->dropForeignKey("fk_user_role","user");
         $this->dropForeignKey("fk_chitietgd_user","chitietgd");
         $this->dropForeignKey("fk_rap_city","rap");
