@@ -20,7 +20,7 @@ class m130524_201442_init extends Migration
             'auth_key' => $this->string(32)->notNull(),
             'password_hash' => $this->string()->notNull(),
             'password_reset_token' => $this->string()->unique(),
-            'email' => $this->string()->notNull()->unique(),
+            'email' => $this->string(50)->notNull()->unique(),
             'cmnd' => $this->string(12)->notNull()->unique(),
             'attributes' => $this->getDb()->getSchema()->createColumnSchemaBuilder('LONGTEXT'),
             'role_id' => $this->integer()->notNull(),
