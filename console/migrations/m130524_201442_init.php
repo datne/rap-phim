@@ -27,6 +27,9 @@ class m130524_201442_init extends Migration
             'status' => $this->smallInteger()->notNull()->defaultValue(10),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
+            'isDeleted' => $this->boolean()->defaultValue(0),
+            'deletedUserId' => $this->integer(),
+            'deletedTime'=> $this->integer(),
         ], $tableOptions);
 
         //create table role
@@ -35,6 +38,9 @@ class m130524_201442_init extends Migration
             'role_name' => $this->string(32)->notNull(),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
+            'isDeleted' => $this->boolean()->defaultValue(0),
+            'deletedUserId' => $this->integer(),
+            'deletedTime'=> $this->integer(),
         ], $tableOptions);
 
 
@@ -44,6 +50,9 @@ class m130524_201442_init extends Migration
             'name' => $this->string(32)->notNull(),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
+            'isDeleted' => $this->boolean()->defaultValue(0),
+            'deletedUserId' => $this->integer(),
+            'deletedTime'=> $this->integer(),
         ], $tableOptions);
 
         //create table rap
@@ -55,6 +64,9 @@ class m130524_201442_init extends Migration
             'updated_at' => $this->integer()->notNull(),
             'slug' => $this->text(),
             'views' => $this->integer(),
+            'isDeleted' => $this->boolean()->defaultValue(0),
+            'deletedUserId' => $this->integer(),
+            'deletedTime'=> $this->integer(),
         ], $tableOptions);
 
         //create table city 
@@ -63,6 +75,9 @@ class m130524_201442_init extends Migration
             'cityname' => $this->string(32)->notNull(),            
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
+            'isDeleted' => $this->boolean()->defaultValue(0),
+            'deletedUserId' => $this->integer(),
+            'deletedTime'=> $this->integer(),
         ], $tableOptions);
 
         //create table rap
@@ -74,6 +89,9 @@ class m130524_201442_init extends Migration
             'city_id' => $this->integer()->notNull(),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
+            'isDeleted' => $this->boolean()->defaultValue(0),
+            'deletedUserId' => $this->integer(),
+            'deletedTime'=> $this->integer(),
         ], $tableOptions);
 
         // create table phongchieu
@@ -84,6 +102,9 @@ class m130524_201442_init extends Migration
             'rap_id' => $this->integer()->notNull(),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
+            'isDeleted' => $this->boolean()->defaultValue(0),
+            'deletedUserId' => $this->integer(),
+            'deletedTime'=> $this->integer(),
         ], $tableOptions);
 
         //create table phim
@@ -96,6 +117,9 @@ class m130524_201442_init extends Migration
             'updated_at' => $this->integer()->notNull(),
             'slug' => $this->text(),
             'status' => $this->smallInteger()->notNull()->defaultValue(10),
+            'isDeleted' => $this->boolean()->defaultValue(0),
+            'deletedUserId' => $this->integer(),
+            'deletedTime'=> $this->integer(),
         ], $tableOptions);
 
         //create table postreview
@@ -107,6 +131,9 @@ class m130524_201442_init extends Migration
             'updated_at' => $this->integer()->notNull(),
             'slug' => $this->text(),
             'views' => $this->integer(),
+            'isDeleted' => $this->boolean()->defaultValue(0),
+            'deletedUserId' => $this->integer(),
+            'deletedTime'=> $this->integer(),
         ], $tableOptions);
 
 
@@ -118,6 +145,9 @@ class m130524_201442_init extends Migration
             'updated_at' => $this->integer()->notNull(),
             'total' => $this->integer()->notNull(),
             'user_id' => $this->integer()->notNull(),
+            'isDeleted' => $this->boolean()->defaultValue(0),
+            'deletedUserId' => $this->integer(),
+            'deletedTime'=> $this->integer(),
         ], $tableOptions);
 
         //create table ve
@@ -127,7 +157,10 @@ class m130524_201442_init extends Migration
             'gd_id' => $this->integer()->notNull(),
             'chongoi' => $this->string(3)->notNull(),  
             'created_at' => $this->integer()->notNull(),
-            'updated_at' => $this->integer()->notNull(),         
+            'updated_at' => $this->integer()->notNull(),
+            'isDeleted' => $this->boolean()->defaultValue(0),
+            'deletedUserId' => $this->integer(),
+            'deletedTime'=> $this->integer(),         
         ], $tableOptions);
         
         $this->createTable('lichchieu', [
@@ -139,7 +172,10 @@ class m130524_201442_init extends Migration
             'gia' => $this->integer(),
             'selected_seat' => $this->getDb()->getSchema()->createColumnSchemaBuilder('LONGTEXT'),  
             'created_at' => $this->integer()->notNull(),
-            'updated_at' => $this->integer()->notNull(),         
+            'updated_at' => $this->integer()->notNull(),
+            'isDeleted' => $this->boolean()->defaultValue(0),
+            'deletedUserId' => $this->integer(),
+            'deletedTime'=> $this->integer(),         
         ], $tableOptions);
 
         $this->createTable('postnews', [
@@ -149,6 +185,9 @@ class m130524_201442_init extends Migration
             'updated_at' => $this->integer()->notNull(),
             'slug' => $this->text()->notNull(),
             'views' => $this->integer()->notNull(),
+            'isDeleted' => $this->boolean()->defaultValue(0),
+            'deletedUserId' => $this->integer(),
+            'deletedTime'=> $this->integer(),
         ], $tableOptions);
 
         //fk ve-chitietgd
@@ -185,6 +224,25 @@ class m130524_201442_init extends Migration
         $this->addForeignKey("fk_user_role","user","role_id","role","id"); 
 
         //create data
+        
+        $this->insert('city', [
+            'cityname' => 'Thành Phố Hồ Chí Minh',
+            'created_at' => date_timestamp_get($date),
+            'updated_at' => date_timestamp_get($date),
+        ]);
+        
+        $this->insert('city', [
+            'cityname' => 'Cà Mau',
+            'created_at' => date_timestamp_get($date),
+            'updated_at' => date_timestamp_get($date),
+        ]);
+
+        $this->insert('city', [
+            'cityname' => 'Cần Thơ',
+            'created_at' => date_timestamp_get($date),
+            'updated_at' => date_timestamp_get($date),
+        ]);
+
         $this->insert('role', [
             'role_name' => 'admin',
             'created_at' => date_timestamp_get($date),

@@ -56,9 +56,15 @@ class LoginForm extends Model
     public function login()
     {
         if ($this->validate()) {
+            if (Yii::$app->id == 'app-backend' && $this->getUser()->role_id != User::ROLE_ADMIN) {
+                $this->addError('username', '');
+                $this->addError('password', 'You do not have permission to access this page !');
+                $this->username = '';
+                $this->password = '';
+                return false;
+            }
             return Yii::$app->user->login($this->getUser(), $this->rememberMe ? 3600 * 24 * 30 : 0);
-        }
-        
+        }        
         return false;
     }
 

@@ -139,8 +139,15 @@ class SiteController extends Controller
      * @return mixed
      */
     public function actionAbout()
-    {
-        return $this->render('about');
+    {      
+        //$test = file_get_contents("http://datdat.local:90/api/city/list");  
+        $ch = curl_init("http://datdat.local:90/cities");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        $data = curl_exec($ch);
+        curl_close($ch);             
+        var_dump(json_decode($data));
+        //return $this->render('about');
     }
 
     /**
