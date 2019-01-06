@@ -11,7 +11,10 @@ return [
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,
-           'showScriptName' => false,
+            'showScriptName' => false,
+        ],
+        'assetManager' => [
+            'appendTimestamp' => true,             
         ],
     ],
 ];

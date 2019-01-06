@@ -3,7 +3,8 @@
 namespace common\models;
 
 use Yii;
-
+use yii\behaviors\TimestampBehavior;
+use \yii\db\ActiveRecord;
 /**
  * This is the model class for table "city".
  *
@@ -17,7 +18,7 @@ use Yii;
  *
  * @property Rap[] $raps
  */
-class City extends \yii\db\ActiveRecord
+class City extends ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -52,6 +53,19 @@ class City extends \yii\db\ActiveRecord
             'isDeleted' => 'Is Deleted',
             'deletedUserId' => 'Deleted User ID',
             'deletedTime' => 'Deleted Time',
+        ];
+    }
+
+    public function behaviors()
+    {
+        return [
+            [
+            'class' => TimestampBehavior::className(),
+             'attributes' => [
+                    ActiveRecord::EVENT_BEFORE_INSERT => ['created_at', 'updated_at'],
+                   // ActiveRecord::EVENT_BEFORE_UPDATE => ['updated_at'],
+                ],
+            ],
         ];
     }
 
