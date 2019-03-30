@@ -14,7 +14,12 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="container section negative-margin contact">
     <div class="row">
         <div class="col-sm-12">
-            <h2><?php echo $this->title; ?></h2>
+            <h1><?php echo '<br />'; ?></h1>
+        </div>
+    </div>  
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>ĐĂNG KÝ TÀI KHOẢN</h2>
         </div>
     </div>
     <div class="row">

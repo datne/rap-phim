@@ -3,8 +3,13 @@
 /* @var $this yii\web\View */
 
 $this->title = 'Khiêm Chô - Cinema';
+$topPhim = ['/images/hero-1.jpg','/images/hero-2.jpg','/images/hero-3.jpg'];
 ?>
 
+<?php echo $this->render('@frontend/views/layouts/_hero_home',[
+    'heroTitle' => $this->title,
+    'topPhim' => $topPhim
+]); ?>
 <!--New in-->
 <div class="container section">
     <div class="row">

@@ -37,13 +37,13 @@ return [
             'errorAction' => 'site/error',
         ],
         'assetManager' => [
-        'appendTimestamp' => true,
-        
-                'bundles' => [
+            'appendTimestamp' => true,
+
+            'bundles' => [
                // 'yii\web\JqueryAsset' => false,
                 'yii\bootstrap\BootstrapAsset' => false,
             ],
-                     
+
         ],
         /*
         'urlManager' => [
@@ -54,5 +54,8 @@ return [
         ],
         */
     ],
-    'params' => $params,
+    'params' => [
+        'params' => $params,
+        'homeUrl' => 'site/index'
+    ],
 ];

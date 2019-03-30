@@ -11,8 +11,14 @@ use yii\captcha\Captcha;
 $this->title = 'Contact';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-
 <div class="container section negative-margin contact">
+    
+    <div class="row">
+        <div class="col-sm-12">
+            <h1><?php echo '<br />'; ?></h1>
+        </div>
+    </div> 
+
     <div class="row">
         <div class="col-sm-12">
             <h2><?php echo $this->title; ?></h2>
