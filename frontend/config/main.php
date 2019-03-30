@@ -36,6 +36,15 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        'assetManager' => [
+        'appendTimestamp' => true,
+        
+                'bundles' => [
+                'yii\web\JqueryAsset' => false,
+                'yii\bootstrap\BootstrapAsset' => false,
+            ],
+                     
+        ],
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,
