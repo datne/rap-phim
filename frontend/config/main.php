@@ -40,7 +40,7 @@ return [
         'appendTimestamp' => true,
         
                 'bundles' => [
-                'yii\web\JqueryAsset' => false,
+               // 'yii\web\JqueryAsset' => false,
                 'yii\bootstrap\BootstrapAsset' => false,
             ],
                      

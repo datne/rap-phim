@@ -19,7 +19,7 @@ class AppAsset extends AssetBundle
         'css/style.css',
     ];
     public $js = [
-        'js/jquery-2.2.4.min.js',
+       // 'js/jquery-2.2.4.min.js',
         'js/jquery-ui.min.js',
         'js/bootstrap.min.js',
         'js/headhesive.min.js',

@@ -4,83 +4,6 @@
 
 $this->title = 'Khiêm Chô - Cinema';
 ?>
-<div id="hero" class="carousel slide carousel-fade" data-ride="carousel">
-    <img src="images/scroll-arrow.svg" alt="Scroll down" class="scroll" />
-
-    <div class="container">
-        <ol class="carousel-indicators">
-            <li data-target="#hero" data-slide-to="0" class="active"></li>
-            <li data-target="#hero" data-slide-to="1"></li>
-            <li data-target="#hero" data-slide-to="2"></li>
-        </ol>
-    </div>
-
-    <div class="carousel-inner">
-        <div class="item active" style="background-image: url(images/hero-1.jpg)">
-
-            <div class="container">
-                <div class="row blurb scrollme animateme" data-when="exit" data-from="0" data-to="1" data-opacity="0" data-translatey="100">
-                    <div class="col-md-9">
-                        <span class="title">Action, Adventure, Fantasy</span>
-                        <h1>End of the World: Part II</h1>
-                        <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum.</p>
-                        <div class="buttons">
-                            <span class="certificate">
-                                PG
-                            </span>
-                            <a href="https://youtu.be/RhFMIRuHAL4" data-vbtype="video" class="venobox btn btn-default">
-                                <i class="material-icons">play_arrow</i>
-                                <span>Play trailer</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="item" style="background-image: url(images/hero-2.jpg)">
-
-            <div class="container">
-                <div class="row blurb scrollme animateme" data-when="exit" data-from="0" data-to="1" data-opacity="0" data-translatey="100">
-                    <div class="col-md-9">
-                        <span class="title">Action, Adventure, Fantasy</span>
-                        <h1>End of the World: Part II</h1>
-                        <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamu.</p>
-                        <div class="buttons">
-                            <span class="certificate">
-                                15
-                            </span>
-                            <a href="https://youtu.be/RhFMIRuHAL4" data-vbtype="video" class="venobox btn btn-default">
-                                <i class="material-icons">play_arrow</i>
-                                <span>Play trailer</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="item" style="background-image: url(images/hero-3.jpg)">
-
-            <div class="container">
-                <div class="row blurb scrollme animateme" data-when="exit" data-from="0" data-to="1" data-opacity="0" data-translatey="100">
-                    <div class="col-md-9">
-                        <span class="title">Action, Adventure, Fantasy</span>
-                        <h1>End of the World: Part II</h1>
-                        <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum.</p>
-                        <div class="buttons">
-                            <span class="certificate">
-                                PG
-                            </span>
-                            <a href="https://youtu.be/RhFMIRuHAL4" data-vbtype="video" class="venobox btn btn-default">
-                                <i class="material-icons">play_arrow</i>
-                                <span>Play trailer</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!--New in-->
 <div class="container section">
@@ -100,7 +23,7 @@ $this->title = 'Khiêm Chô - Cinema';
                             </div>
                         </aside>
                         <a href="#">
-                            <img src="images/movie-1.jpg" alt="Movie title" />
+                            <img src="/images/movie-1.jpg" alt="Movie title" />
                         </a>
                     </div>
                     <h4 class="no-underline">The last post</h4>
@@ -124,7 +47,7 @@ $this->title = 'Khiêm Chô - Cinema';
                             </div>
                         </aside>
                         <a href="#">
-                            <img src="images/movie-2.jpg" alt="Movie title" />
+                            <img src="/images/movie-2.jpg" alt="Movie title" />
                         </a>
                     </div>
                     <h4 class="no-underline">Dark and lonely</h4>
@@ -148,7 +71,7 @@ $this->title = 'Khiêm Chô - Cinema';
                             </div>
                         </aside>
                         <a href="#">
-                            <img src="images/movie-3.jpg" alt="Movie title" />
+                            <img src="/images/movie-3.jpg" alt="Movie title" />
                         </a>
                     </div>
                     <h4 class="no-underline">Venture</h4>
@@ -172,7 +95,7 @@ $this->title = 'Khiêm Chô - Cinema';
                             </div>
                         </aside>
                         <a href="#">
-                            <img src="images/movie-4.jpg" alt="Movie title" />
+                            <img src="/images/movie-4.jpg" alt="Movie title" />
                         </a>
                     </div>
                     <h4 class="no-underline">Hush</h4>
@@ -196,7 +119,7 @@ $this->title = 'Khiêm Chô - Cinema';
                             </div>
                         </aside>
                         <a href="#">
-                            <img src="images/movie-3.jpg" alt="Movie title" />
+                            <img src="/images/movie-3.jpg" alt="Movie title" />
                         </a>
                     </div>
                     <h4 class="no-underline">Venture</h4>
@@ -233,7 +156,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-6.jpg" alt="Movie title">
+                                <img src="/images/movie-6.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -263,7 +186,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-5.jpg" alt="Movie title">
+                                <img src="/images/movie-5.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -293,7 +216,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-8.jpg" alt="Movie title">
+                                <img src="/images/movie-8.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -323,7 +246,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="#">
-                                <img src="images/movie-7.jpg" alt="Movie title">
+                                <img src="/images/movie-7.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -355,7 +278,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-7.jpg" alt="Movie title">
+                                <img src="/images/movie-7.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -385,7 +308,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-5.jpg" alt="Movie title">
+                                <img src="/images/movie-5.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -415,7 +338,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-6.jpg" alt="Movie title">
+                                <img src="/images/movie-6.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -445,7 +368,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-8.jpg" alt="Movie title">
+                                <img src="/images/movie-8.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -477,7 +400,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-6.jpg" alt="Movie title">
+                                <img src="/images/movie-6.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -507,7 +430,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-5.jpg" alt="Movie title">
+                                <img src="/images/movie-5.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -537,7 +460,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-7.jpg" alt="Movie title">
+                                <img src="/images/movie-7.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -567,7 +490,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-8.jpg" alt="Movie title">
+                                <img src="/images/movie-8.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -599,7 +522,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-5.jpg" alt="Movie title">
+                                <img src="/images/movie-5.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -629,7 +552,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-7.jpg" alt="Movie title">
+                                <img src="/images/movie-7.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -659,7 +582,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-6.jpg" alt="Movie title">
+                                <img src="/images/movie-6.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -689,7 +612,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-8.jpg" alt="Movie title">
+                                <img src="/images/movie-8.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -721,7 +644,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-5.jpg" alt="Movie title">
+                                <img src="/images/movie-5.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -751,7 +674,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-6.jpg" alt="Movie title">
+                                <img src="/images/movie-6.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -781,7 +704,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-7.jpg" alt="Movie title">
+                                <img src="/images/movie-7.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -811,7 +734,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-8.jpg" alt="Movie title">
+                                <img src="/images/movie-8.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -843,7 +766,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-6.jpg" alt="Movie title">
+                                <img src="/images/movie-6.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -873,7 +796,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-7.jpg" alt="Movie title">
+                                <img src="/images/movie-7.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -903,7 +826,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-5.jpg" alt="Movie title">
+                                <img src="/images/movie-5.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -933,7 +856,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-8.jpg" alt="Movie title">
+                                <img src="/images/movie-8.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -965,7 +888,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-5.jpg" alt="Movie title">
+                                <img src="/images/movie-5.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -995,7 +918,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-6.jpg" alt="Movie title">
+                                <img src="/images/movie-6.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -1025,7 +948,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-7.jpg" alt="Movie title">
+                                <img src="/images/movie-7.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -1055,7 +978,7 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="row movie-tabs">
                         <div class="col-md-2 col-sm-3">
                             <a href="single-movie.html">
-                                <img src="images/movie-8.jpg" alt="Movie title">
+                                <img src="/images/movie-8.jpg" alt="Movie title">
                             </a>
                         </div>
                         <div class="col-md-10 col-sm-9">
@@ -1098,7 +1021,7 @@ $this->title = 'Khiêm Chô - Cinema';
             <div class="col-sm-12">
                 <h2>Coming soon</h2>
                 <div class="row single-slide slideOne">
-                    <div class="bg" style="background: url(images/slide-1.png);"></div>
+                    <div class="bg" style="background: url(/images/slide-1.png);"></div>
                     <div class="col-sm-5 col-xs-12 slide-content">
                         <span class="title">Drama, Thriller</span>
                         <h3 class="no-underline">Deepwater Horizon</h3>
@@ -1118,12 +1041,12 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="col-sm-6 col-xs-12 col-sm-push-1 slide-video">
                         <a href="https://youtu.be/S-UPJyEHmM0" data-vbtype="video" class="venobox video">
                             <i class="material-icons">play_arrow</i>
-                            <img src="images/slide-1-video.png" alt="" />
+                            <img src="/images/slide-1-video.png" alt="" />
                         </a>
                     </div>
                 </div>
                 <div class="row single-slide slideTwo">
-                    <div class="bg" style="background: url(images/slide-2.png);"></div>
+                    <div class="bg" style="background: url(/images/slide-2.png);"></div>
                     <div class="col-sm-5 slide-content">
                         <span class="title">Action, Adventure, Sci-Fi</span>
                         <h3 class="no-underline">X-Men: Days of Future Past</h3>
@@ -1143,12 +1066,12 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="col-sm-6 col-sm-push-1 slide-video">
                         <a href="https://youtu.be/S-UPJyEHmM0" data-vbtype="video" class="venobox video">
                             <i class="material-icons">play_arrow</i>
-                            <img src="images/slide-2-video.png" alt="" />
+                            <img src="/images/slide-2-video.png" alt="" />
                         </a>
                     </div>
                 </div>
                 <div class="row single-slide slideThree">
-                    <div class="bg" style="background: url(images/slide-3.png);"></div>
+                    <div class="bg" style="background: url(/images/slide-3.png);"></div>
                     <div class="col-sm-5 slide-content">
                         <span class="title">Comedy, Crime</span>
                         <h3 class="no-underline">The Hangover Part III</h3>
@@ -1168,12 +1091,12 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="col-sm-6 col-sm-push-1 slide-video">
                         <a href="https://youtu.be/S-UPJyEHmM0" data-vbtype="video" class="venobox video">
                             <i class="material-icons">play_arrow</i>
-                            <img src="images/slide-3-video.png" alt="" />
+                            <img src="/images/slide-3-video.png" alt="" />
                         </a>
                     </div>
                 </div>
                 <div class="row single-slide slideFour">
-                    <div class="bg" style="background: url(images/slide-4.png);"></div>
+                    <div class="bg" style="background: url(/images/slide-4.png);"></div>
                     <div class="col-sm-5 slide-content">
                         <span class="title">Action, Adventure, Sci-Fi</span>
                         <h3 class="no-underline">Transformers: Age of Extinction</h3>
@@ -1193,12 +1116,12 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="col-sm-6 col-sm-push-1 slide-video">
                         <a href="https://youtu.be/S-UPJyEHmM0" data-vbtype="video" class="venobox video">
                             <i class="material-icons">play_arrow</i>
-                            <img src="images/slide-4-video.png" alt="" />
+                            <img src="/images/slide-4-video.png" alt="" />
                         </a>
                     </div>
                 </div>
                 <div class="row single-slide slideFive">
-                    <div class="bg" style="background: url(images/slide-5.png);"></div>
+                    <div class="bg" style="background: url(/images/slide-5.png);"></div>
                     <div class="col-sm-5 slide-content">
                         <span class="title">Action, Adventure, Drama</span>
                         <h3 class="no-underline">End of an empire</h3>
@@ -1218,12 +1141,12 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="col-sm-6 col-sm-push-1 slide-video">
                         <a href="https://youtu.be/S-UPJyEHmM0" data-vbtype="video" class="venobox video">
                             <i class="material-icons">play_arrow</i>
-                            <img src="images/slide-5-video.png" alt="" />
+                            <img src="/images/slide-5-video.png" alt="" />
                         </a>
                     </div>
                 </div>
                 <div class="row single-slide slideSix">
-                    <div class="bg" style="background: url(images/slide-6.png);"></div>
+                    <div class="bg" style="background: url(/images/slide-6.png);"></div>
                     <div class="col-sm-5 slide-content">
                         <span class="title">Crime, Thriller, Drama</span>
                         <h3 class="no-underline">Hannibal Rising</h3>
@@ -1243,12 +1166,12 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="col-sm-6 col-sm-push-1 slide-video">
                         <a href="https://youtu.be/S-UPJyEHmM0" data-vbtype="video" class="venobox video">
                             <i class="material-icons">play_arrow</i>
-                            <img src="images/slide-6-video.png" alt="" />
+                            <img src="/images/slide-6-video.png" alt="" />
                         </a>
                     </div>
                 </div>
                 <div class="row single-slide slideSeven">
-                    <div class="bg" style="background: url(images/slide-7.png);"></div>
+                    <div class="bg" style="background: url(/images/slide-7.png);"></div>
                     <div class="col-sm-5 slide-content">
                         <span class="title">Adventure, Drama, Sci-Fi </span>
                         <h3 class="no-underline">Locked out</h3>
@@ -1268,56 +1191,56 @@ $this->title = 'Khiêm Chô - Cinema';
                     <div class="col-sm-6 col-sm-push-1 slide-video">
                         <a href="https://www.google.com/" class="video">
                             <i class="material-icons">play_arrow</i>
-                            <img src="images/slide-7-video.png" alt="" />
+                            <img src="/images/slide-7-video.png" alt="" />
                         </a>
                     </div>
                 </div>
                 <div class="slick-carousel" id="comingSoon">
                     <div data-dynamicclass="slideOne">
                         <a href="#">
-                            <img src="images/movie-10.jpg" alt="">
+                            <img src="/images/movie-10.jpg" alt="">
                         </a>
                         <h5 class="left no-underline">Deepwater horizon</h5>
                         <span class="release-date">07 September, 2017</span>
                     </div>
                     <div data-dynamicclass="slideTwo">
                         <a href="#">
-                            <img src="images/movie-9.jpg" alt="">
+                            <img src="/images/movie-9.jpg" alt="">
                         </a>
                         <h5 class="left no-underline">Too fast</h5>
                         <span class="release-date">15 April, 2017</span>
                     </div>
                     <div data-dynamicclass="slideThree">
                         <a href="#">
-                            <img src="images/movie-11.jpg" alt="">
+                            <img src="/images/movie-11.jpg" alt="">
                         </a>
                         <h5 class="left no-underline">The Hangover: Part III</h5>
                         <span class="release-date">30 September, 2017</span>
                     </div>
                     <div data-dynamicclass="slideFour">
                         <a href="#">
-                            <img src="images/movie-12.jpg" alt="">
+                            <img src="/images/movie-12.jpg" alt="">
                         </a>
                         <h5 class="left no-underline">Transformers: Age of Extinction</h5>
                         <span class="release-date">15 April, 2018</span>
                     </div>
                     <div data-dynamicclass="slideFive">
                         <a href="#">
-                            <img src="images/movie-13.jpg" alt="">
+                            <img src="/images/movie-13.jpg" alt="">
                         </a>
                         <h5 class="left no-underline">End of an empire</h5>
                         <span class="release-date">19 October, 2018</span>
                     </div>
                     <div data-dynamicclass="slideSix">
                         <a href="#">
-                            <img src="images/movie-14.jpg" alt="">
+                            <img src="/images/movie-14.jpg" alt="">
                         </a>
                         <h5 class="left no-underline">The comedian</h5>
                         <span class="release-date">21 November, 2018</span>
                     </div>
                     <div data-dynamicclass="slideSeven">
                         <a href="#">
-                            <img src="images/movie-15.jpg" alt="">
+                            <img src="/images/movie-15.jpg" alt="">
                         </a>
                         <h5 class="left no-underline">Locked out</h5>
                         <span class="release-date">01 December, 2018</span>
