@@ -61,8 +61,6 @@ class CitiesSearch extends City
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
             'isDeleted' => $this->isDeleted,
             'deletedUserId' => $this->deletedUserId,
             'deletedTime' => $this->deletedTime,

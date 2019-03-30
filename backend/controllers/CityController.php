@@ -59,12 +59,16 @@ class CityController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new CitiesSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+        $city = new City();       
+        $data = $city->getAll();
+        var_dump($data);
+        exit;
+        // $searchModel = new CitiesSearch();
+        // $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        // return $this->render('index', [
+        //     'searchModel' => $searchModel,
+        //     'dataProvider' => $dataProvider,
+        // ]);
     }
 
     /**
