@@ -14,7 +14,7 @@ class m130524_201442_init extends Migration
         }
 
         //create table user
-        $this->createTable('{{%user}}', [
+        $this->createTable('user', [
             'id' => $this->primaryKey(),
             'username' => $this->string()->notNull()->unique(),
             'auth_key' => $this->string(32)->notNull(),
@@ -24,7 +24,7 @@ class m130524_201442_init extends Migration
             'cmnd' => $this->string(12)->notNull()->unique(),
             'attributes' => $this->getDb()->getSchema()->createColumnSchemaBuilder('LONGTEXT'),
             'role_id' => $this->integer()->notNull(),
-            'status' => $this->smallInteger()->notNull()->defaultValue(10),
+            'isActive' => $this->boolean()->defaultValue(1),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
             'isDeleted' => $this->boolean()->defaultValue(0),
@@ -44,8 +44,19 @@ class m130524_201442_init extends Migration
         ], $tableOptions);
 
 
-        //create table theloai 
-        $this->createTable('theloai', [
+        //create table theloai phim 
+        $this->createTable('category_phim', [
+            'id' => $this->primaryKey(),
+            'name' => $this->string(32)->notNull(),
+            'created_at' => $this->integer()->notNull(),
+            'updated_at' => $this->integer()->notNull(),
+            'isDeleted' => $this->boolean()->defaultValue(0),
+            'deletedUserId' => $this->integer(),
+            'deletedTime'=> $this->integer(),
+        ], $tableOptions);
+
+        // create table theloai article
+        $this->createTable('category_article', [
             'id' => $this->primaryKey(),
             'name' => $this->string(32)->notNull(),
             'created_at' => $this->integer()->notNull(),
@@ -111,7 +122,7 @@ class m130524_201442_init extends Migration
         $this->createTable('phim', [
             'id' => $this->primaryKey(),
             'attributes' => $this->getDb()->getSchema()->createColumnSchemaBuilder('LONGTEXT'),   
-            'tl_id' => $this->integer()->notNull(),      
+            'cate_phim_id' => $this->integer()->notNull(),      
             'dd_id' => $this->integer()->notNull(),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
@@ -122,20 +133,20 @@ class m130524_201442_init extends Migration
             'deletedTime'=> $this->integer(),
         ], $tableOptions);
 
-        //create table postreview
-        $this->createTable('postreview', [
+        //create table article
+        $this->createTable('article', [
             'id' => $this->primaryKey(),
-            'attributes' => $this->getDb()->getSchema()->createColumnSchemaBuilder('LONGTEXT')->notNull(),   
-            'phim_id' => $this->integer()->notNull(),                 
+            'attributes' => $this->getDb()->getSchema()->createColumnSchemaBuilder('LONGTEXT'),   
+            'cate_article_id' => $this->integer()->notNull(),                
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
             'slug' => $this->text(),
-            'views' => $this->integer(),
+            'publish' => $this->boolean()->defaultValue(0),
+            'posterId' => $this->integer(),
             'isDeleted' => $this->boolean()->defaultValue(0),
             'deletedUserId' => $this->integer(),
             'deletedTime'=> $this->integer(),
         ], $tableOptions);
-
 
         //create table chitietgd
         $this->createTable('chitietgd', [
@@ -177,18 +188,7 @@ class m130524_201442_init extends Migration
             'deletedUserId' => $this->integer(),
             'deletedTime'=> $this->integer(),         
         ], $tableOptions);
-
-        $this->createTable('postnews', [
-            'id' => $this->primaryKey(),
-            'attributes' => $this->getDb()->getSchema()->createColumnSchemaBuilder('LONGTEXT')->notNull(),                        
-            'created_at' => $this->integer()->notNull(),
-            'updated_at' => $this->integer()->notNull(),
-            'slug' => $this->text()->notNull(),
-            'views' => $this->integer()->notNull(),
-            'isDeleted' => $this->boolean()->defaultValue(0),
-            'deletedUserId' => $this->integer(),
-            'deletedTime'=> $this->integer(),
-        ], $tableOptions);
+      
 
         //fk ve-chitietgd
         $this->addForeignKey("fk_ve_ctgd","ve","gd_id","chitietgd","id");
@@ -205,11 +205,11 @@ class m130524_201442_init extends Migration
         //fk phongchieu-rap
         $this->addForeignKey("fk_phongchieu_rap","phongchieu","rap_id","rap","id"); 
 
-        //fk postreview-phim
-        $this->addForeignKey("fk_postreview_phim","postreview","phim_id","phim","id");
+        //fk phim-theloai
+        $this->addForeignKey("fk_phim_categoryPhim","phim","cate_phim_id","category_phim","id"); 
 
         //fk phim-theloai
-        $this->addForeignKey("fk_phim_theloai","phim","tl_id","theloai","id"); 
+        $this->addForeignKey("fk_article_categoryArticle","article","cate_article_id","category_article","id"); 
 
         //fk phim-daodien
         $this->addForeignKey("fk_phim_daodien","phim","dd_id","daodien","id");  
@@ -283,8 +283,8 @@ class m130524_201442_init extends Migration
         $this->dropForeignKey("fk_chitietgd_user","chitietgd");
         $this->dropForeignKey("fk_rap_city","rap");
         $this->dropForeignKey("fk_phim_daodien","phim");
-        $this->dropForeignKey("fk_phim_theloai","phim");
-        $this->dropForeignKey("fk_postreview_phim","postreview");
+        $this->dropForeignKey("fk_phim_categoryPhim","phim");
+        $this->dropForeignKey("fk_article_categoryArticle","article");
         $this->dropForeignKey("fk_phongchieu_rap","phongchieu");
         $this->dropForeignKey("fk_lichchieu_phongchieu","lichchieu");
         $this->dropForeignKey("fk_lichchieu_phim","lichchieu");
@@ -292,17 +292,17 @@ class m130524_201442_init extends Migration
         $this->dropForeignKey("fk_ve_ctgd","ve");
 
 
-        $this->dropTable('postnews');
         $this->dropTable('lichchieu');
         $this->dropTable('ve');
         $this->dropTable('chitietgd');
-        $this->dropTable('postreview');
+        $this->dropTable('article'); 
         $this->dropTable('phim');
         $this->dropTable('phongchieu');  
         $this->dropTable('rap');  
         $this->dropTable('city');
         $this->dropTable('daodien');
-        $this->dropTable('theloai');       
+        $this->dropTable('category_article'); 
+        $this->dropTable('category_phim');       
         $this->dropTable('role');
         $this->dropTable('user');
     }
