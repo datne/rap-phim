@@ -99,9 +99,8 @@ AppAsset::register($this);
 </div>
 <?php 
 $route = Yii::$app->controller->getRoute();
-$params = Yii::$app->params;
 ?>
-<?php if ($route !== $params['homeUrl']): ?>
+<?php if ($route !== Yii::$app->params['homeUrl']): ?>
     <?php echo $this->render('@frontend/views/layouts/_hero',[
         'heroTitle' => $this->title,
     ]); ?>
