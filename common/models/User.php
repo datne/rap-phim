@@ -16,7 +16,7 @@ use yii\web\IdentityInterface;
  * @property string $password_reset_token
  * @property string $email
  * @property string $auth_key
- * @property integer $isActive
+ * @property boolean $isActive
  * @property integer $created_at
  * @property integer $updated_at
  * @property string $password write-only password
@@ -59,8 +59,14 @@ class User extends ActiveRecord implements IdentityInterface
             [['username', 'password_hash', 'password_reset_token'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 32],
             [['email'], 'string', 'max' => 50],
-            [['cmnd'], 'string', 'max' => 12],            
-            [['email','username','cmnd','password_reset_token'], 'unique'],           
+            [['cmnd'], 'string', 'max' => 12],
+
+            
+            [['username'], 'unique'],
+            [['email'], 'unique'],
+            [['cmnd'], 'unique'],
+            [['password_reset_token'], 'unique'],
+
             [['role_id'], 'exist', 'skipOnError' => true, 'targetClass' => Role::className(), 'targetAttribute' => ['role_id' => 'id']],
             ['isActive', 'default', 'value' => self::STATUS_ACTIVE],
             //['isActive', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
