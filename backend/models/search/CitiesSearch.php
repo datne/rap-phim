@@ -4,12 +4,12 @@ namespace backend\models\search;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use common\models\City;
+use common\models\business\MySql\City as MySql_City;
 
 /**
- * CitiesSearch represents the model behind the search form of `common\models\City`.
+ * CitiesSearch represents the model behind the search form of `common\models\business\MySql\City`.
  */
-class CitiesSearch extends City
+class CitiesSearch extends MySql_City
 {
     /**
      * {@inheritdoc}
@@ -40,7 +40,7 @@ class CitiesSearch extends City
      */
     public function search($params)
     {
-        $query = City::find();
+        $query = MySql_City::find();
 
         // add conditions that should always apply here
 

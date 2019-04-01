@@ -1,6 +1,6 @@
 <?php
 use yii\widgets\Breadcrumbs;
-use dmstr\widgets\Alert;
+use yii\bootstrap\Alert;
 
 ?>
 <div class="content-wrapper">
@@ -30,7 +30,20 @@ use dmstr\widgets\Alert;
     </section>
 
     <section class="content">
-        <?= Alert::widget() ?>
+        <?php
+        if (Yii::$app->session->getFlash('flashMessage') != null) {
+            echo Alert::widget([
+                'options' => ['class' => 'alert-success'],
+                'body' => Yii::$app->session->getFlash('flashMessage'),
+            ]);
+        }
+        else if(Yii::$app->session->getFlash('errorMessage') != null) {
+            echo Alert::widget([
+                'options' => ['class' => 'alert-danger'],
+                'body' => Yii::$app->session->getFlash('errorMessage'),
+            ]);
+        }
+        ?>
         <?= $content ?>
     </section>
 </div>

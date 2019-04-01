@@ -8,11 +8,11 @@ interface BaseInterface{
 
 	public function getObject($id);
 
-	public function addObject($params);
+	public function addObject();
 
 	public function deleteObject($id);
 
-	public function updateObject($id,$params);
+	public function updateObject($id);
 
 }
 

@@ -2398,16 +2398,20 @@ a:focus {
 }
 .alert-success {
   border-color: #008d4c;
+  margin-top: 15px;
 }
 .alert-danger,
 .alert-error {
   border-color: #d73925;
+  margin-top: 15px;
 }
 .alert-warning {
   border-color: #e08e0b;
+  margin-top: 15px;
 }
 .alert-info {
   border-color: #00acd6;
+  margin-top: 15px;
 }
 /*
  * Component: Nav

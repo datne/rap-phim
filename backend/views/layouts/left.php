@@ -36,29 +36,29 @@
                     ['label' => 'Danh mục thành phố', 'icon' => 'university', 'url' => ['/city/index']],
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                     [
-                        'label' => 'Some tools',
+                        'label' => 'Caterogy',
                         'icon' => 'share',
                         'url' => '#',
                         'items' => [
-                            ['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii'],],
-                            ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug'],],
-                            [
-                                'label' => 'Level One',
-                                'icon' => 'circle-o',
-                                'url' => '#',
-                                'items' => [
-                                    ['label' => 'Level Two', 'icon' => 'circle-o', 'url' => '#',],
-                                    [
-                                        'label' => 'Level Two',
-                                        'icon' => 'circle-o',
-                                        'url' => '#',
-                                        'items' => [
-                                            ['label' => 'Level Three', 'icon' => 'circle-o', 'url' => '#',],
-                                            ['label' => 'Level Three', 'icon' => 'circle-o', 'url' => '#',],
-                                        ],
-                                    ],
-                                ],
-                            ],
+                            ['label' => 'Phim', 'icon' => 'film', 'url' => ['/gii'],],
+                            ['label' => 'Bài Viết', 'icon' => 'pencil', 'url' => ['/debug'],],
+                            // [
+                            //     'label' => 'Level One',
+                            //     'icon' => 'circle-o',
+                            //     'url' => '#',
+                            //     'items' => [
+                            //         ['label' => 'Level Two', 'icon' => 'circle-o', 'url' => '#',],
+                            //         [
+                            //             'label' => 'Level Two',
+                            //             'icon' => 'circle-o',
+                            //             'url' => '#',
+                            //             'items' => [
+                            //                 ['label' => 'Level Three', 'icon' => 'circle-o', 'url' => '#',],
+                            //                 ['label' => 'Level Three', 'icon' => 'circle-o', 'url' => '#',],
+                            //             ],
+                            //         ],
+                            //     ],
+                            // ],
                         ],
                     ],                 
                 ],

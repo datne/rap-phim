@@ -19,7 +19,7 @@ return [
             'class' => 'yii\redis\Cache',
         ],
         'session' => [
-            'class' => 'yii\redis\Session',
+            'class' => 'yii\web\Session',
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,

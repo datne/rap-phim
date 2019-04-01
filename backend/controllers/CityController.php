@@ -15,6 +15,8 @@ use yii\filters\AccessControl;
  */
 class CityController extends Controller
 {
+
+
     /**
      * {@inheritdoc}
      */
@@ -59,31 +61,17 @@ class CityController extends Controller
      */
     public function actionIndex()
     {
-        $city = new City();       
-        $data = $city->getAll();
-        var_dump($data);
-        exit;
-        // $searchModel = new CitiesSearch();
-        // $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        // return $this->render('index', [
-        //     'searchModel' => $searchModel,
-        //     'dataProvider' => $dataProvider,
-        // ]);
-    }
-
-    /**
-     * Displays a single City model.
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionView($id)
-    {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
+        $city = City::getInstance();       
+        // $data = $city->getAll();       
+        $searchModel = new CitiesSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
         ]);
     }
 
+    
     /**
      * Creates a new City model.
      * If creation is successful, the browser will be redirected to the 'view' page.
@@ -91,12 +79,14 @@ class CityController extends Controller
      */
     public function actionCreate()
     {
-        $model = new City();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        $model = City::getInstance();       
+        if ($model->load(Yii::$app->request->post())) {
+            if ($model->addObject()) {
+                $session = Yii::$app->session;
+                $session->setFlash('flashMessage', 'Thêm thành công "'.$model->cityName.'" !');
+                return $this->redirect(['index']);
+            }
         }
-
         return $this->render('create', [
             'model' => $model,
         ]);
@@ -111,15 +101,16 @@ class CityController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+        $model = City::getInstance();
+        $model = $model->getObject($id);
 
         if ($model->load(Yii::$app->request->post())) {
-            $model->updated_at = time();
-            if ($model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
+            if ($model->updateObject($id)) {
+                $session = Yii::$app->session;
+                $session->setFlash('flashMessage', 'Cập nhật thành công "'.$model->cityName.'" !');
+                return $this->redirect(['index']);
             }
         }
-
         return $this->render('update', [
             'model' => $model,
         ]);
@@ -134,27 +125,12 @@ class CityController extends Controller
      */
     public function actionDelete($id)
     {     
-        $city = $this->findModel($id);
-        $city->isDeleted = true;
-        $city->deletedTime = time();
-        $city->deletedUserId = Yii::$app->user->identity->id;
-        $city->save();
+        $model = City::getInstance();
+        if ($model->deleteObject($id)) {
+            $session = Yii::$app->session;
+            $session->setFlash('flashMessage', 'Xóa thành công !');
+        }
         return $this->redirect(['index']);
     }
-
-    /**
-     * Finds the City model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return City the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    protected function findModel($id)
-    {
-        if (($model = City::findOne($id)) !== null) {
-            return $model;
-        }
-
-        throw new NotFoundHttpException('The requested page does not exist.');
-    }
+      
 }
